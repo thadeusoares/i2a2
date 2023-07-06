@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Esqueci minha senha</title>
+</head>
+<body>
+    <img src="logo.png" alt="Logo">
+    <form id="resetForm">
+        <input type="email" id="email" placeholder="Email">
+        <button type="submit">Redefinir a senha</button>
+    </form>
+
+    <script>
+        document.getElementById('resetForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var email = document.getElementById('email').value;
+            if (email) {
+                alert('Um link para a redefinição de senha foi enviado para o e-mail informado');
+                window.location.href = 'index.html';
+            } else {
+                alert('Por favor, insira um e-mail válido.');
+            }
+        });
+    </script>
+</body>
+</html>

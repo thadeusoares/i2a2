@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Produtos</title>
+</head>
+<body>
+    <img src="logo.png" alt="Logo">
+    <ul id="productList">
+        <!-- Produtos serão adicionados aqui pelo JavaScript -->
+    </ul>
+
+    <script>
+        var products = [
+            // Adicione seus produtos aqui no formato { id: '1', name: 'Produto 1', price: 'R$100', image: 'url_da_imagem' },
+        ];
+        var productList = document.getElementById('productList');
+        products.forEach(function(product) {
+            var listItem = document.createElement('li');
+            listItem.innerHTML = '<h2>' + product.name + '</h2><img src="' + product.image + '"><p>Preço: ' + product.price + '</p>';
+            productList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>

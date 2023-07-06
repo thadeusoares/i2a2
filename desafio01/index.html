@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <img src="logo.png" alt="Logo">
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Nome">
+        <input type="password" id="password" placeholder="Senha">
+        <button type="submit">Entrar</button>
+    </form>
+    <a href="esqueciSenha.html">Esqueci minha senha</a>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            if (username && password) {
+                window.location.href = 'listaProdutos.html';
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        });
+    </script>
+</body>
+</html>
