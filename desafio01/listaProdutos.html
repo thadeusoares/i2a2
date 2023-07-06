@@ -23,16 +23,63 @@
         price: 'R$' + (Math.random() * 1000).toFixed(2),
         image: 'https://images.immediate.co.uk/production/volatile/sites/4/2023/03/ooni-pizza-oven-324b545.jpg?quality=90&webp=true&resize=900,589'
     },
-    // Adicione os outros produtos aqui, seguindo o mesmo formato
+    {
+        id: Math.floor(Math.random() * 1000),
+        name: 'Apple-Watch-Ultra-4930130',
+        price: 'R$' + (Math.random() * 1000).toFixed(2),
+        image: 'https://images.immediate.co.uk/production/volatile/sites/4/2022/09/Apple-Watch-Ultra-4930130.jpg?quality=90&webp=true&resize=975,639'
+    },
+    {
+        id: Math.floor(Math.random() * 1000),
+        name: 'Motion-X600-496ce55',
+        price: 'R$' + (Math.random() * 1000).toFixed(2),
+        image: 'https://images.immediate.co.uk/production/volatile/sites/4/2023/03/Motion-X600-496ce55.jpg?quality=90&webp=true&resize=900,632'
+    },
+    {
+        id: Math.floor(Math.random() * 1000),
+        name: 'Beeline-edit-f171f88-e1671460302287',
+        price: 'R$' + (Math.random() * 1000).toFixed(2),
+        image: 'https://images.immediate.co.uk/production/volatile/sites/4/2022/12/Beeline-edit-f171f88-e1671460302287.jpg?quality=90&webp=true&resize=975,492'
+    },
+    {
+        id: Math.floor(Math.random() * 1000),
+        name: 'garmin-132bab8',
+        price: 'R$' + (Math.random() * 1000).toFixed(2),
+        image: 'https://images.immediate.co.uk/production/volatile/sites/4/2023/03/garmin-132bab8.jpg?quality=90&webp=true&resize=975,975'
+    },
+    {
+        id: Math.floor(Math.random() * 1000),
+        name: 'Google-Pixel-7-3eb37f3-e1671460331950',
+        price: 'R$' + (Math.random() * 1000).toFixed(2),
+        image: 'https://images.immediate.co.uk/production/volatile/sites/4/2022/12/Google-Pixel-7-3eb37f3-e1671460331950.jpg?quality=90&webp=true&resize=975,518'
+    },
+    {
+        id: Math.floor(Math.random() * 1000),
+        name: 'iRobot-8141bfb-e1671460365444',
+        price: 'R$' + (Math.random() * 1000).toFixed(2),
+        image: 'https://images.immediate.co.uk/production/volatile/sites/4/2022/12/iRobot-8141bfb-e1671460365444.jpg?quality=90&webp=true&resize=975,538'
+    },
+    {
+        id: Math.floor(Math.random() * 1000),
+        name: 'Meta-Quest-32f5cdf',
+        price: 'R$' + (Math.random() * 1000).toFixed(2),
+        image: 'https://images.immediate.co.uk/production/volatile/sites/4/2022/12/Meta-Quest-32f5cdf.jpg?quality=90&webp=true&resize=975,467'
+    },
+    {
+        id: Math.floor(Math.random() * 1000),
+        name: 'Apple-Airpods-gen-2-5172e60',
+        price: 'R$' + (Math.random() * 1000).toFixed(2),
+        image: 'https://images.immediate.co.uk/production/volatile/sites/4/2022/09/Apple-Airpods-gen-2-5172e60.jpg?quality=90&webp=true&resize=975,654'
+    }
 ];
 
-// Agora, você pode usar este array para preencher sua lista de produtos
-var productList = document.getElementById('productList');
-products.forEach(function(product) {
-    var listItem = document.createElement('li');
-    listItem.innerHTML = '<h2>' + product.name + '</h2><img src="' + product.image + '"><p>Preço: ' + product.price + '</p>';
-    productList.appendChild(listItem);
-});
+    // Agora, você pode usar este array para preencher sua lista de produtos
+    var productList = document.getElementById('productList');
+    products.forEach(function(product) {
+        var listItem = document.createElement('li');
+        listItem.innerHTML = '<h2>' + product.name + '</h2><img src="' + product.image + '"><p>Preço: ' + product.price + '</p>';
+        productList.appendChild(listItem);
+    });
 
     </script>
 </body>
