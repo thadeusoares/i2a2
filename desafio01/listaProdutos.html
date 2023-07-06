@@ -11,14 +11,29 @@
 
     <script>
         var products = [
-            // Adicione seus produtos aqui no formato { id: '1', name: 'Produto 1', price: 'R$100', image: 'url_da_imagem' },
-        ];
-        var productList = document.getElementById('productList');
-        products.forEach(function(product) {
-            var listItem = document.createElement('li');
-            listItem.innerHTML = '<h2>' + product.name + '</h2><img src="' + product.image + '"><p>Preço: ' + product.price + '</p>';
-            productList.appendChild(listItem);
-        });
+    {
+        id: Math.floor(Math.random() * 1000),
+        name: 'SONOS-speaker-25e3687-1',
+        price: 'R$' + (Math.random() * 1000).toFixed(2),
+        image: 'https://images.immediate.co.uk/production/volatile/sites/4/2023/03/SONOS-speaker-25e3687-1.jpg?quality=90&webp=true&resize=900,613'
+    },
+    {
+        id: Math.floor(Math.random() * 1000),
+        name: 'ooni-pizza-oven-324b545',
+        price: 'R$' + (Math.random() * 1000).toFixed(2),
+        image: 'https://images.immediate.co.uk/production/volatile/sites/4/2023/03/ooni-pizza-oven-324b545.jpg?quality=90&webp=true&resize=900,589'
+    },
+    // Adicione os outros produtos aqui, seguindo o mesmo formato
+];
+
+// Agora, você pode usar este array para preencher sua lista de produtos
+var productList = document.getElementById('productList');
+products.forEach(function(product) {
+    var listItem = document.createElement('li');
+    listItem.innerHTML = '<h2>' + product.name + '</h2><img src="' + product.image + '"><p>Preço: ' + product.price + '</p>';
+    productList.appendChild(listItem);
+});
+
     </script>
 </body>
 </html>
