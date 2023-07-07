@@ -2,15 +2,66 @@
 <html>
 <head>
     <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+        input, button {
+            display: block;
+            border: 1px solid #ddd;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #45a049;
+        }
+        img {
+            display: block;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
-    <img src="logo.png" alt="Logo">
     <form id="loginForm">
+        <img src="logo.png" alt="Logo" style="width: 100%; max-width: 200px; margin-bottom: 20px;">
         <input type="text" id="username" placeholder="Nome">
         <input type="password" id="password" placeholder="Senha">
         <button type="submit">Entrar</button>
+        <a href="esqueciSenha.html">Esqueci minha senha</a>
     </form>
-    <a href="esqueciSenha.html">Esqueci minha senha</a>
 
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(event) {
