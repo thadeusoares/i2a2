@@ -1,26 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Esqueci minha senha</title>
+    <title>Esqueci a Senha</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+        .logo {
+            width: 100%;
+            max-width: 200px;
+            display: block;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 5px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <img src="logo.png" alt="Logo">
-    <form id="resetForm">
-        <input type="email" id="email" placeholder="Email">
-        <button type="submit">Redefinir a senha</button>
-    </form>
-
-    <script>
-        document.getElementById('resetForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            var email = document.getElementById('email').value;
-            if (email) {
-                alert('Um link para a redefinição de senha foi enviado para o e-mail informado');
-                window.location.href = 'index.html';
-            } else {
-                alert('Por favor, insira um e-mail válido.');
-            }
-        });
-    </script>
+    <div class="container">
+        <img src="logo.png" alt="Logo" class="logo">
+        <form>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Redefinir Senha</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
