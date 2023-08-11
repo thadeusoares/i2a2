@@ -76,7 +76,7 @@
         .then((res) => res.json())
         .then((data) => {
           chatbox.innerHTML += `<div>Eliza: ${data.response}</div>`;
-          previousResponse.push(message);
+          //previousResponse.push(message);
           previousResponse.push(data.response);
 
           chatbox.scrollTop = chatbox.scrollHeight;

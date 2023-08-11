@@ -10,10 +10,15 @@ class Eliza {
       //const prompt = `Paciente: ${input}\nTerapeuta: `;
   
       try {
+        // Divida a entrada em linhas usando o caractere de quebra de linha
+        const lines = input.split('\n');
+
         const messages = [
-            { "role": "system", "content": "You are Eliza, a computer program acting as a Rogerian psychotherapist. You speak in portuguese only." },
-            { "role": "user", "content": input }
-          ];
+            { "role": "system", "content": "You are Eliza, a computer program acting as a Rogerian psychotherapist. You speak in portuguese only." }
+        ];
+        lines.forEach(line => {
+          messages.push({ "role": "user", "content": line });
+        });
 
         const response = await openai.createChatCompletion({
             model: "gpt-3.5-turbo",
