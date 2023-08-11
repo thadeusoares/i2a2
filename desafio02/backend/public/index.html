@@ -56,7 +56,7 @@
 
     var previousResponse = [""];
 
-    chatbox.innerHTML += "<div>Eliza: Olá, eu sou a Elisa. Serei sua terapeuta hoje.</div>";
+    chatbox.innerHTML += "<div>Eliza: Olá, eu sou a Eliza. Serei sua terapeuta hoje.</div>";
 
 
     // Função para enviar a mensagem
@@ -78,6 +78,8 @@
           chatbox.innerHTML += `<div>Eliza: ${data.response}</div>`;
           previousResponse.push(message);
           previousResponse.push(data.response);
+
+          chatbox.scrollTop = chatbox.scrollHeight;
         });
 
       userInput.value = '';
