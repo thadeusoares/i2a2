@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>New ELIZA</title>
+  <style>
+    #chatbox {
+      height: 400px;
+      width: 100%;
+      border: 1px solid #ccc;
+      padding: 10px;
+      overflow-y: scroll;
+      margin-bottom: 10px;
+    }
+
+    #input-area {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #user-input {
+      flex-grow: 1;
+      margin-right: 10px;
+    }
+
+    #send-button {
+      background-color: #008CBA;
+      /* Azul */
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="chatbox">
+    <!-- Aqui serão exibidas as mensagens do chat -->
+  </div>
+
+  <div id="input-area">
+    <input id="user-input" type="text" placeholder="Digite sua mensagem aqui...">
+    <button id="send-button">Enviar</button>
+  </div>
+  <script>
+    const chatbox = document.getElementById('chatbox');
+    const userInput = document.getElementById('user-input');
+    const sendButton = document.getElementById('send-button');
+
+    var previousResponse = [""];
+
+    chatbox.innerHTML += "<div>Eliza: Olá, eu sou a Elisa. Serei sua terapeuta hoje.</div>";
+
+
+    // Função para enviar a mensagem
+    function sendMessage() {
+      const messageText = userInput.value;
+      chatbox.innerHTML += `<div>Usuário: ${messageText}</div>`;
+      
+      const message = previousResponse.concat(messageText).join("\n");
+      console.log(JSON.stringify({ message }))
+      fetch('/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message }),
+        //body: JSON.stringify({ message }),
+        
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          chatbox.innerHTML += `<div>Eliza: ${data.response}</div>`;
+          previousResponse.push(message);
+          previousResponse.push(data.response);
+        });
+
+      userInput.value = '';
+    }
+
+    // Adiciona o ouvinte de evento para o botão Enviar
+    sendButton.addEventListener('click', sendMessage);
+
+    // Adiciona o ouvinte de evento para a tecla Enter no campo de entrada
+    userInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.keyCode === 13) {
+        e.preventDefault(); // Evita a ação padrão do Enter
+        sendMessage();
+      }
+    });
+
+  </script>
+
+</body>
+
+</html>
